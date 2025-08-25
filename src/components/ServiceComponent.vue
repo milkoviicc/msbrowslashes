@@ -42,10 +42,10 @@ const services = ref([
     image: "/images/corrections.png",
     gallery: [
       "/images/services-gallery/tattoo1.png",
-      "/images/services-gallery/tattoo5.jpg",
+      "/images/services-gallery/tattoo2.jpg",
       "/images/services-gallery/tattoo3.jpg",
       "/images/services-gallery/tattoo4.jpg",
-      "/images/services-gallery/tattoo2.jpg",
+      "/images/services-gallery/tattoo5.jpg",
       "/images/services-gallery/tattoo6.jpg",
       "/images/services-gallery/tattoo7.jpg",
       "/images/services-gallery/tattoo8.jpg",
@@ -257,15 +257,13 @@ onUnmounted(() => {
         class="relative my-2 bg-transparent rounded-xl shadow-2xl h-[calc(100%-30px)] flex flex-col md:flex-row"
       >
         <div class="overflow-auto">
-          <masonry-wall
-            :items="galleryItems"
-            :max-columns="2"
-            :column-width="250"
-            :gap="16"
-            :watch-images="true"
-          >
+          <masonry-wall :items="galleryItems" :max-columns="2" :column-width="250" :gap="16">
             <template #default="{ item }">
-              <img :src="item" alt="Service image" />
+              <img
+                :src="item"
+                alt="Service image"
+                style="min-height: 150px; width: 100%; object-fit: cover"
+              />
             </template>
           </masonry-wall>
         </div>
