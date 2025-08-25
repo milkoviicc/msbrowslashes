@@ -201,7 +201,7 @@ onUnmounted(() => {
 
         <div class="absolute inset-0 z-30 bg-bg-opacity rounded" aria-hidden="true"></div>
 
-        <div class="absolute -top-6 left-18 z-40 w-full">
+        <div class="absolute -top-6 left-18 z-40 w-fit">
           <img
             :src="service.image"
             :alt="service.serviceName + ' thumbnail'"
