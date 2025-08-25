@@ -3,6 +3,7 @@
 @import "@fontsource/montserrat";
 @import "@fontsource/crimson-text";
 @import "@fontsource/nunito/200.css";
+@import "@fontsource/nunito/300.css";
 @import "@fontsource/nunito";
 
 @theme {
@@ -76,6 +77,11 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: #151919;
+}
+
+body,
+html {
+  scroll-behavior: smooth;
 }
 
 button {
