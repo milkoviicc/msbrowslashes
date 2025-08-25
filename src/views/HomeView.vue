@@ -31,7 +31,8 @@ const scrollIndicator = {
 <template>
   <div class="w-full h-screen">
     <div
-      style="background-image: url(&quot;/src/assets/images/hero.png&quot;)"
+      style="background-image: url(&quot;/images/hero.png&quot;)"
+      :class="`bg-[${'/src/assets/images/hero.png'}]`"
       class="relative w-full h-screen bg-cover bg-center flex flex-col"
     >
       <div class="absolute inset-0 bg-bg-opacity"></div>
@@ -128,7 +129,7 @@ const scrollIndicator = {
         :in-view-options="{ once: true }"
         class="flex flex-1 flex-col items-center justify-between gap-4"
       >
-        <img src="../assets/images/marina-about.png" alt="Marina Šimunić" width="500" />
+        <img src="/images/marina-about.png" alt="Marina Šimunić" width="500" />
         <p class="text-3xl text-[#A5A5A5] font-crimson-text tracking-wide">mag. med. techn.</p>
       </motion.div>
     </div>
