@@ -6,11 +6,11 @@
     </div>
 
     <!-- cards row -->
-    <div class="py-8 flex flex-wrap gap-8 px-16">
+    <div class="py-8 flex flex-wrap gap-8 pl-16">
       <motion.div
         v-for="(service, i) in services"
         :key="i"
-        class="relative max-w-[250px] w-full flex flex-col items-center rounded justify-between hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out shadow-lg"
+        class="relative max-w-[315px] w-auto flex-1 flex flex-col items-center rounded justify-between hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out shadow-lg"
         :initial="{ opacity: 0, y: 10 }"
         :while-in-view="{ opacity: 1, y: 0, transition: { duration: 0.45, delay: i * 0.08 } }"
         :in-view-options="{ once: true }"
@@ -29,7 +29,7 @@
 
         <div class="absolute inset-0 z-30 bg-bg-opacity rounded" aria-hidden="true"></div>
 
-        <div class="absolute -top-6 left-11 z-40 w-full">
+        <div class="absolute -top-6 left-18 z-40 w-full">
           <img
             :src="service.image"
             :alt="service.serviceName + ' thumbnail'"
@@ -48,9 +48,11 @@
         </div>
 
         <div class="px-4 pt-42 pb-6 z-40 text-center w-full h-full">
-          <h2 class="text-2xl font-cinzel uppercase">{{ service.serviceName }}</h2>
+          <h2 class="text-3xl font-cinzel uppercase">{{ service.serviceName }}</h2>
           <div class="flex flex-col h-full">
-            <ul class="list-disc list-inside text-[#989898] text-left mt-2">
+            <ul
+              class="list-disc list-inside text-[#989898] text-left mt-2 px-4 max-h-[130px] h-full flex flex-col justify-center"
+            >
               <li
                 v-for="(item, j) in service.smallDescription"
                 :key="j"

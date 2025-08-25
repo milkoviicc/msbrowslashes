@@ -2,6 +2,8 @@
 @import "@fontsource/cinzel";
 @import "@fontsource/montserrat";
 @import "@fontsource/crimson-text";
+@import "@fontsource/nunito/200.css";
+@import "@fontsource/nunito";
 
 @theme {
   --color-brand-gray: #a2a2a2;
@@ -22,9 +24,9 @@
 }
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  font-family: "Nunito", sans-serif;
   font-weight: 400;
+  line-height: 1.5;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);

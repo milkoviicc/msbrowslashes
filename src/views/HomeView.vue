@@ -59,7 +59,7 @@ const scrollIndicator = {
       <div class="relative flex-1 flex flex-col items-center justify-center space-y-4 w-full">
         <div class="flex flex-col space-y-4 justify-center items-center">
           <motion.h3
-            class="font-extralight text-brand-accent text-3xl"
+            class="text-brand-accent text-3xl font-nunito font-extralight"
             :initial="{ opacity: 0, y: -20 }"
             :animate="{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.7 } }"
             >obrt za uljepšavanje</motion.h3
@@ -103,7 +103,7 @@ const scrollIndicator = {
           </h2>
           <div class="w-[75%] h-[1px] mt-4 bg-[#919191]"></div>
         </div>
-        <p class="font-light text-3xl leading-7 max-w-[95%] my-2">
+        <p class="font-light text-3xl leading-7 my-2">
           MS Beauty & Brows se od 2020. godine specijalizirao za vrhunske tretmane microbladinga,
           trajne šminke, tetoviranja i trepavica.
         </p>
@@ -128,7 +128,7 @@ const scrollIndicator = {
         :in-view-options="{ once: true }"
         class="flex flex-1 flex-col items-center justify-between gap-4"
       >
-        <img src="../assets/images/marina-about.png" alt="Marina Šimunić" width="450" />
+        <img src="../assets/images/marina-about.png" alt="Marina Šimunić" width="500" />
         <p class="text-3xl text-[#A5A5A5] font-crimson-text tracking-wide">mag. med. techn.</p>
       </motion.div>
     </div>
