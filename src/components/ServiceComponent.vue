@@ -257,7 +257,13 @@ onUnmounted(() => {
         class="relative my-2 bg-transparent rounded-xl shadow-2xl h-[calc(100%-30px)] flex flex-col md:flex-row"
       >
         <div class="overflow-auto">
-          <masonry-wall :items="galleryItems" :max-columns="2" :column-width="250" :gap="16">
+          <masonry-wall
+            :items="galleryItems"
+            :max-columns="2"
+            :column-width="250"
+            :gap="16"
+            :watch-images="true"
+          >
             <template #default="{ item }">
               <img :src="item" alt="Service image" />
             </template>
