@@ -260,36 +260,48 @@ watch(
         >
       </div>
     </div>
-    <div class="bg-[#151919] pt-20 pb-16 px-16 flex" id="about">
+    <div class="bg-[#151919] pt-20 pb-16 px-8 md:px-16 flex flex-col xl:flex-row" id="about">
       <motion.div
-        class="flex flex-col w-1/2 space-y-2 justify-center"
+        class="flex flex-col w-full xl:w-1/2 space-y-2 justify-center"
         :initial="{ filter: 'blur(2px)', opacity: 0 }"
         :while-in-view="{ filter: 'blur(0px)', opacity: 1, transition: { duration: 1 } }"
         :in-view-options="{ once: true }"
       >
         <div class="w-fit">
-          <h2 class="text-5xl font-[400] font-montserrat">
+          <h2 class="text-2xl md:text-5xl 2xl:text-6xl font-[400] font-montserrat">
             <span class="text-brand-accent">Marina Šimunić,<br /></span>Beauty Expert & Educator
           </h2>
           <div class="w-[75%] h-[1px] mt-4 bg-[#919191]"></div>
         </div>
-        <p class="font-extralight text-3xl leading-7 my-2">
+        <p class="font-extralight text-lg md:text-3xl 2xl:text-4xl leading-7 2xl:leading-10 my-2">
           MS Beauty & Brows se od 2020. godine<br />
           specijalizirao za vrhunske tretmane microbladinga,<br />
           trajne šminke, tetoviranja i trepavica.
         </p>
-        <div class="flex flex-col space-y-4 mt-12 text-2xl">
+        <div class="flex flex-col space-y-4 mt-12 text-base md:text-2xl 2xl:text-3xl">
           <p class="flex items-center gap-2">
-            <img src="../assets/icons/podium.png" alt="1st Place Podium" width="50" class="mr-4" />
+            <img
+              src="../assets/icons/podium.png"
+              alt="1st Place Podium"
+              class="mr-4 w-[36px] h-[36px] md:w-[50px] md:h-[50px]"
+            />
             Prvi plasman - microblading 2025
           </p>
           <p class="flex items-center gap-2">
-            <img src="../assets/icons/people.png" alt="Education" class="w-[48px] h-[40px] mr-4" />
+            <img
+              src="../assets/icons/people.png"
+              alt="Education"
+              class="mr-4 w-[36px] h-[28px] md:w-[48px] md:h-[40px]"
+            />
             150+ Zadovoljnih klijenata
           </p>
           <p class="flex items-center gap-2">
-            <img src="../assets/icons/education.png" alt="Clients" width="48" class="mr-4" /> 10+
-            Održanih edukacija
+            <img
+              src="../assets/icons/education.png"
+              alt="Clients"
+              class="mr-4 w-[36px] h-[36px] md:w-[50px] md:h-[50px]"
+            />
+            10+ Održanih edukacija
           </p>
         </div>
       </motion.div>
@@ -299,8 +311,14 @@ watch(
         :in-view-options="{ once: true }"
         class="flex flex-1 flex-col items-center justify-between gap-4"
       >
-        <img src="/images/marina-about.png" alt="Marina Šimunić" class="max-w-[500px] w-auto" />
-        <p class="text-3xl text-[#A5A5A5] font-crimson-text tracking-wide">mag. med. techn.</p>
+        <img
+          src="/images/marina-about.png"
+          alt="Marina Šimunić"
+          class="max-w-[300px] md:max-w-[500px] 2xl:max-w-[600px] w-auto"
+        />
+        <p class="text-3xl 2xl:text-4xl text-[#A5A5A5] font-crimson-text tracking-wide">
+          mag. med. techn.
+        </p>
       </motion.div>
     </div>
     <div class="w-full h-[1px] bg-[#555]" id="services"></div>

@@ -182,7 +182,7 @@ onUnmounted(() => {
       <motion.div
         v-for="(service, i) in services"
         :key="i"
-        class="relative max-w-[315px] w-auto flex flex-col flex-1 items-center rounded justify-between hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out shadow-lg"
+        class="relative max-w-[315px] 2xl:max-w-[400px] md:h-[400px] pb-4 w-auto flex flex-col flex-1 items-center rounded justify-between hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out shadow-lg"
         :initial="{ opacity: 0, y: 10 }"
         :while-in-view="{ opacity: 1, y: 0, transition: { duration: 0.45, delay: i * 0.08 } }"
         :in-view-options="{ once: true }"
@@ -225,14 +225,14 @@ onUnmounted(() => {
           <h2 class="text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl font-cinzel uppercase">
             {{ service.serviceName }}
           </h2>
-          <div class="flex flex-col h-full">
+          <div class="flex flex-col h-full justify-center">
             <ul
               class="list-disc list-inside text-[#989898] text-left mt-2 px-4 max-h-[130px] h-full flex flex-col justify-center"
             >
               <li
                 v-for="(item, j) in [...new Set(service.description.map((i) => i.shortTitle))]"
                 :key="j"
-                class="text-2xl lg:text-xl xl:text-2xl font-segoe font-light"
+                class="text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl font-segoe font-light"
               >
                 {{ item }}
               </li>
