@@ -172,17 +172,17 @@ onUnmounted(() => {
 
 <template>
   <section class="py-24 relative" ref="sectionRef" aria-labelledby="services-serviceName">
-    <div class="w-fit px-16 mb-12">
+    <div class="w-fit px-8 md:px-16 mb-12">
       <h1 id="services-serviceName" class="font-light text-5xl text-[#E9E9E9]">Vrste usluga</h1>
       <div class="bg-[#868686] h-[1px] mt-4 w-[110%]"></div>
     </div>
 
     <!-- cards row -->
-    <div class="py-8 flex flex-wrap gap-8 pl-16">
+    <div class="py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-8 px-8 md:px-16">
       <motion.div
         v-for="(service, i) in services"
         :key="i"
-        class="relative max-w-[315px] w-auto flex-1 flex flex-col items-center rounded justify-between hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out shadow-lg"
+        class="relative max-w-[315px] w-auto flex flex-col flex-1 items-center rounded justify-between hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out shadow-lg"
         :initial="{ opacity: 0, y: 10 }"
         :while-in-view="{ opacity: 1, y: 0, transition: { duration: 0.45, delay: i * 0.08 } }"
         :in-view-options="{ once: true }"
@@ -201,26 +201,30 @@ onUnmounted(() => {
 
         <div class="absolute inset-0 z-30 bg-bg-opacity rounded" aria-hidden="true"></div>
 
-        <div class="absolute -top-6 left-18 z-40 w-fit">
-          <img
-            :src="service.image"
-            :alt="service.serviceName + ' thumbnail'"
-            class="w-40 h-40 object-cover rounded-full"
-          />
-          <img
-            src="/images/service-overlay.png"
-            alt=""
-            class="absolute top-0 left-1 z-30 w-40 h-40 object-fit rounded-full pointer-events-none"
-          />
-          <img
-            src="/images/service-overlay.png"
-            alt=""
-            class="absolute top-1 -left-1 z-30 w-40 h-40 object-fit rounded-full pointer-events-none"
-          />
+        <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 z-40 w-fit">
+          <div class="relative w-40 h-40 rounded-full">
+            <img
+              :src="service.image"
+              :alt="service.serviceName + ' thumbnail'"
+              class="w-40 h-40 object-cover rounded-full"
+            />
+            <img
+              src="/images/service-overlay.png"
+              alt=""
+              class="absolute top-0 left-1 z-30 w-40 h-40 object-cover rounded-full pointer-events-none"
+            />
+            <img
+              src="/images/service-overlay.png"
+              alt=""
+              class="absolute top-1 -left-1 z-30 w-40 h-40 object-cover rounded-full pointer-events-none"
+            />
+          </div>
         </div>
 
-        <div class="px-4 pt-42 pb-6 z-40 text-center w-full h-full">
-          <h2 class="text-3xl font-cinzel uppercase">{{ service.serviceName }}</h2>
+        <div class="px-4 lg:px-2 xl:px-4 pt-42 pb-6 z-40 text-center w-full h-full">
+          <h2 class="text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl font-cinzel uppercase">
+            {{ service.serviceName }}
+          </h2>
           <div class="flex flex-col h-full">
             <ul
               class="list-disc list-inside text-[#989898] text-left mt-2 px-4 max-h-[130px] h-full flex flex-col justify-center"
@@ -228,7 +232,7 @@ onUnmounted(() => {
               <li
                 v-for="(item, j) in [...new Set(service.description.map((i) => i.shortTitle))]"
                 :key="j"
-                class="text-2xl font-segoe font-light"
+                class="text-2xl lg:text-xl xl:text-2xl font-segoe font-light"
               >
                 {{ item }}
               </li>
