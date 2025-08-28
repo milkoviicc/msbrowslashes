@@ -77,7 +77,11 @@ watch(
 <template>
   <div class="w-full h-screen">
     <div
-      style="background-image: url(&quot;/images/hero.png&quot;)"
+      style="
+        background-image: url(&quot;/images/hero.png&quot;);
+        background-size: cover;
+        background-position: center;
+      "
       :class="`bg-[${'/src/assets/images/hero.png'}]`"
       class="relative w-full h-screen bg-cover bg-center flex flex-col"
     >
@@ -230,18 +234,16 @@ watch(
           </div>
         </div>
         <motion.p
-          v-if="!mobileView"
           :initial="{ opacity: 0, y: 20 }"
           :animate="{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.7 } }"
-          class="text-lighter-white font-light text-xl md:text-2xl 2xl:text-4xl text-center px-4"
+          class="text-lighter-white font-light text-xl md:text-2xl 2xl:text-4xl text-center px-4 hidden min-[420px]:block"
           >Pomažem ženama da imaju savršene obrve,<br />
           senzualne usne i zavodljive oči.</motion.p
         >
         <motion.p
-          v-else
           :initial="{ opacity: 0, y: 20 }"
           :animate="{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.7 } }"
-          class="text-lighter-white font-light text-xl md:text-2xl 2xl:text-4xl text-center px-4"
+          class="text-lighter-white font-light text-xl md:text-2xl 2xl:text-4xl text-center px-4 hidden max-[420px]:block"
           >Pomažem ženama da imaju savršene obrve, senzualne usne i zavodljive oči.</motion.p
         >
         <motion.p

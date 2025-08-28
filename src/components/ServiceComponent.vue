@@ -284,7 +284,7 @@ onUnmounted(() => {
 
         <!-- right: content -->
         <div
-          class="w-full h-full py-8 px-4 xl:p-12 bg-[#151919] text-[#e9e9e9] flex flex-col overflow-auto"
+          class="w-full h-full py-4 md:py-8 px-4 xl:p-12 bg-[#151919] text-[#e9e9e9] flex flex-col overflow-auto"
         >
           <button @click="close" class="absolute top-4 right-4 text-4xl hidden md:block">X</button>
           <div class="sticky top-0 md:mt-20 flex flex-col h-full pb-4">
