@@ -76,7 +76,23 @@ body {
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #151919;
+}
+
+.background {
+  background:
+    repeating-radial-gradient(
+      circle at top right,
+      rgba(255, 255, 255, 0.01) 0px,
+      rgba(255, 255, 255, 0.01) 119px,
+      transparent 80px,
+      transparent 120px
+    ),
+    radial-gradient(circle at top right, rgba(255, 215, 152, 0.15) 30%, rgba(21, 25, 25, 0.92) 65%),
+    linear-gradient(135deg, #151919 0%, #000000 100%);
+
+  background-blend-mode: normal, normal, overlay;
+  display: flex;
+  flex-direction: column;
 }
 
 body,

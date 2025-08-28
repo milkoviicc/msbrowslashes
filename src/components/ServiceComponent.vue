@@ -181,7 +181,7 @@ onUnmounted(() => {
       <motion.div
         v-for="(service, i) in services"
         :key="i"
-        class="relative max-w-full 2xl:max-w-[400px] md:h-[400px] pb-4 w-auto flex flex-col flex-1 items-center rounded justify-between hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out shadow-lg"
+        class="relative z-50 max-w-full 2xl:max-w-[400px] md:h-[400px] pb-4 w-auto flex flex-col flex-1 items-center rounded justify-between hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out shadow-2xl"
         :initial="{ opacity: 0, y: 10 }"
         :while-in-view="{ opacity: 1, y: 0, transition: { duration: 0.45, delay: i * 0.08 } }"
         :in-view-options="{ once: true }"
@@ -244,7 +244,7 @@ onUnmounted(() => {
     <!-- Expanded overlay (shows when a service is selected) -->
     <motion.div
       v-if="selectedService !== null"
-      class="fixed inset-0 z-50 w-full"
+      class="fixed inset-0 z-50 w-full flex items-center"
       :initial="{ opacity: 0, y: 16 }"
       :animate="{ opacity: 1, y: 0, transition: { duration: 0.3, ease: 'easeInOut' } }"
       :exit="{ opacity: 0, y: 8 }"
@@ -303,7 +303,7 @@ onUnmounted(() => {
             </div>
 
             <hr class="text-brand-accent py-3" />
-            <ul class="text-[#cfcfcf] space-y-3 pb-6 overflow-auto">
+            <ul class="text-[#cfcfcf] space-y-3 pb-12 overflow-auto">
               <li
                 v-for="(item, idx) in services[selectedService].description"
                 :key="idx"
