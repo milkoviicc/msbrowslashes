@@ -172,7 +172,7 @@ onUnmounted(() => {
 
 <template>
   <section class="py-24 relative" ref="sectionRef" aria-labelledby="services-serviceName">
-    <div class="w-fit px-8 md:px-16 mb-12">
+    <div class="w-fit px-4 sm:px-8 md:px-16 mb-12">
       <h1 id="services-serviceName" class="font-light text-5xl text-[#E9E9E9]">Vrste usluga</h1>
       <div class="bg-[#868686] h-[1px] mt-4 w-[110%]"></div>
     </div>
@@ -182,7 +182,7 @@ onUnmounted(() => {
       <motion.div
         v-for="(service, i) in services"
         :key="i"
-        class="relative max-w-[315px] 2xl:max-w-[400px] md:h-[400px] pb-4 w-auto flex flex-col flex-1 items-center rounded justify-between hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out shadow-lg"
+        class="relative max-w-full 2xl:max-w-[400px] md:h-[400px] pb-4 w-auto flex flex-col flex-1 items-center rounded justify-between hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out shadow-lg"
         :initial="{ opacity: 0, y: 10 }"
         :while-in-view="{ opacity: 1, y: 0, transition: { duration: 0.45, delay: i * 0.08 } }"
         :in-view-options="{ once: true }"
@@ -258,43 +258,40 @@ onUnmounted(() => {
 
       <!-- content panel -->
       <div
-        class="relative my-2 bg-transparent rounded-xl shadow-2xl h-[calc(100%-30px)] flex flex-col md:flex-row"
+        class="relative my-2 mt-[70px] md:mt-0 bg-transparent rounded-xl w-full shadow-2xl h-full md:h-[calc(100%-30px)] flex flex-col md:flex-row overflow-auto"
       >
-        <div class="overflow-auto">
+        <div class="overflow-y-auto h-full">
           <masonry-wall :items="galleryItems" :max-columns="2" :column-width="250" :gap="16">
             <template #default="{ item }">
               <img
                 :src="item"
                 alt="Service image"
-                style="min-height: 150px; width: 100%; object-fit: cover"
+                class="h-[350px] md:min-h-full md:h-full w-full object-cover rounded-lg"
               />
             </template>
           </masonry-wall>
         </div>
 
         <!-- right: content -->
-        <div class="w-full p-8 md:p-12 bg-[#151919] text-[#e9e9e9] overflow-auto flex flex-col">
+        <div
+          class="w-full h-full p-8 md:p-12 bg-[#151919] text-[#e9e9e9] flex flex-col overflow-auto"
+        >
           <div class="sticky top-0 flex flex-col h-full">
             <div class="flex items-start justify-between mb-4">
-              <div>
+              <div class="h-full">
                 <h2 class="text-3xl md:text-4xl font-cinzel uppercase mb-2">
                   {{ services[selectedService].serviceName }}
                 </h2>
-                <p class="text-sm md:text-base text-[#bdbdbd]">
-                  <!-- you can customize this line or add a shortIntro in your data -->
-                  Detaljan pregled usluge i opcija.
-                </p>
+                <p class="text-sm md:text-base text-[#bdbdbd]">Detaljan pregled usluge i opcija.</p>
               </div>
 
-              <!-- close -->
               <ShimmerButton ref="closeBtn" @click="close" aria-label="Zatvori detalje usluge"
                 >Zatvori</ShimmerButton
               >
             </div>
 
             <hr class="text-brand-accent py-3" />
-            <!-- description list -->
-            <ul class="text-[#cfcfcf] space-y-3 mb-6">
+            <ul class="text-[#cfcfcf] space-y-3 mb-6 overflow-auto">
               <li
                 v-for="(item, idx) in services[selectedService].description"
                 :key="idx"

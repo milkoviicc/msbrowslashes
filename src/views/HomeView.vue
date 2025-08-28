@@ -260,7 +260,10 @@ watch(
         >
       </div>
     </div>
-    <div class="bg-[#151919] pt-20 pb-16 px-8 md:px-16 flex flex-col xl:flex-row" id="about">
+    <div
+      class="bg-[#151919] pt-20 pb-16 px-4 sm:px-8 md:px-16 flex flex-col gap-8 xl:flex-row"
+      id="about"
+    >
       <motion.div
         class="flex flex-col w-full xl:w-1/2 space-y-2 justify-center"
         :initial="{ filter: 'blur(2px)', opacity: 0 }"
@@ -273,17 +276,17 @@ watch(
           </h2>
           <div class="w-[75%] h-[1px] mt-4 bg-[#919191]"></div>
         </div>
-        <p class="font-extralight text-lg md:text-3xl 2xl:text-4xl leading-7 2xl:leading-10 my-2">
+        <p class="font-extralight text-lg md:text-2xl 2xl:text-4xl leading-7 2xl:leading-10 my-2">
           MS Beauty & Brows se od 2020. godine<br />
           specijalizirao za vrhunske tretmane microbladinga,<br />
           trajne šminke, tetoviranja i trepavica.
         </p>
-        <div class="flex flex-col space-y-4 mt-12 text-base md:text-2xl 2xl:text-3xl">
+        <div class="flex flex-col space-y-4 mt-12 text-base md:text-xl 2xl:text-3xl">
           <p class="flex items-center gap-2">
             <img
               src="../assets/icons/podium.png"
               alt="1st Place Podium"
-              class="mr-4 w-[36px] h-[36px] md:w-[50px] md:h-[50px]"
+              class="mr-4 w-[36px] h-[36px] lg:w-[50px] lg:h-[50px]"
             />
             Prvi plasman - microblading 2025
           </p>
@@ -291,7 +294,7 @@ watch(
             <img
               src="../assets/icons/people.png"
               alt="Education"
-              class="mr-4 w-[36px] h-[28px] md:w-[48px] md:h-[40px]"
+              class="mr-4 w-[36px] h-[28px] lg:w-[48px] lg:h-[40px]"
             />
             150+ Zadovoljnih klijenata
           </p>
@@ -299,7 +302,7 @@ watch(
             <img
               src="../assets/icons/education.png"
               alt="Clients"
-              class="mr-4 w-[36px] h-[36px] md:w-[50px] md:h-[50px]"
+              class="mr-4 w-[36px] h-[36px] lg:w-[50px] lg:h-[50px]"
             />
             10+ Održanih edukacija
           </p>
@@ -316,7 +319,7 @@ watch(
           alt="Marina Šimunić"
           class="max-w-[300px] md:max-w-[500px] 2xl:max-w-[600px] w-auto"
         />
-        <p class="text-3xl 2xl:text-4xl text-[#A5A5A5] font-crimson-text tracking-wide">
+        <p class="text-2xl md:text-3xl 2xl:text-4xl text-[#A5A5A5] font-crimson-text tracking-wide">
           mag. med. techn.
         </p>
       </motion.div>
