@@ -16,28 +16,21 @@ const heroText = ref("MS BROWS & LASHES");
 const mobileView = ref(false);
 const mobileMenuOpened = ref(false);
 
+const closeMobileMenu = () => {
+  mobileMenuOpened.value = !mobileMenuOpened.value;
+};
+
 onMounted(() => {
   mobileView.value = window.innerWidth < 768;
-  const heroText = SplitText.create(".heroText", { type: "words" });
-  gsap.fromTo(
-    heroText.words,
-    {
-      y: 115,
-      ease: "power4.inOut",
-    },
-    {
-      y: 0,
-      stagger: 0.01,
-      delay: 0.2,
-      duration: 0.2,
-    }
-  );
 });
 
 const { scrollYProgress } = useScroll();
 
 window.addEventListener("scroll", () => {
   scrollPosition.value = window.scrollY;
+  if (mobileMenuOpened.value) {
+    closeMobileMenu();
+  }
 });
 
 const scrollIndicator = {
@@ -276,9 +269,15 @@ watch(
           </h2>
           <div class="w-[75%] h-[1px] mt-4 bg-[#919191]"></div>
         </div>
-        <p class="font-extralight text-lg md:text-2xl 2xl:text-4xl leading-7 2xl:leading-10 my-2">
+        <p
+          class="font-extralight text-lg md:text-2xl 2xl:text-4xl leading-7 2xl:leading-10 my-2 max-[420px]:hidden"
+        >
           MS Beauty & Brows se od 2020. godine<br />
           specijalizirao za vrhunske tretmane microbladinga,<br />
+          trajne šminke, tetoviranja i trepavica.
+        </p>
+        <p class="font-extralight text-lg my-2 min-[420px]:hidden">
+          MS Beauty & Brows se od 2020. godine specijalizirao za vrhunske tretmane microbladinga,
           trajne šminke, tetoviranja i trepavica.
         </p>
         <div class="flex flex-col space-y-4 mt-12 text-base md:text-xl 2xl:text-3xl">

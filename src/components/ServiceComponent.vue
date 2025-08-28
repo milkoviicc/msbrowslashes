@@ -2,7 +2,6 @@
 import { ref, onMounted, onUnmounted, nextTick, watch } from "vue";
 import { motion } from "motion-v";
 import { computed } from "vue";
-import ShimmerButton from "./ui/shimmer-button/ShimmerButton.vue";
 // ---------- YOUR SERVICES ----------
 const services = ref([
   {
@@ -260,8 +259,19 @@ onUnmounted(() => {
       <div
         class="relative my-2 mt-[70px] md:mt-0 bg-transparent rounded-xl w-full shadow-2xl h-full md:h-[calc(100%-30px)] flex flex-col md:flex-row overflow-auto"
       >
-        <div class="overflow-y-auto h-full">
+        <div class="overflow-y-auto h-full hidden lg:block">
           <masonry-wall :items="galleryItems" :max-columns="2" :column-width="250" :gap="16">
+            <template #default="{ item }">
+              <img
+                :src="item"
+                alt="Service image"
+                class="h-[350px] md:min-h-full md:h-full w-full object-cover rounded-lg"
+              />
+            </template>
+          </masonry-wall>
+        </div>
+        <div class="overflow-y-auto h-full block lg:hidden">
+          <masonry-wall :items="galleryItems" :max-columns="1" :column-width="250" :gap="16">
             <template #default="{ item }">
               <img
                 :src="item"
@@ -274,24 +284,26 @@ onUnmounted(() => {
 
         <!-- right: content -->
         <div
-          class="w-full h-full p-8 md:p-12 bg-[#151919] text-[#e9e9e9] flex flex-col overflow-auto"
+          class="w-full h-full py-8 px-4 xl:p-12 bg-[#151919] text-[#e9e9e9] flex flex-col overflow-auto"
         >
-          <div class="sticky top-0 flex flex-col h-full">
-            <div class="flex items-start justify-between mb-4">
+          <button @click="close" class="absolute top-4 right-4 text-4xl hidden md:block">X</button>
+          <div class="sticky top-0 md:mt-20 flex flex-col h-full pb-4">
+            <div class="flex items-start justify-between gap-4 mb-4">
               <div class="h-full">
-                <h2 class="text-3xl md:text-4xl font-cinzel uppercase mb-2">
+                <h2 class="text-3xl xl:text-4xl font-cinzel uppercase mb-2">
                   {{ services[selectedService].serviceName }}
                 </h2>
-                <p class="text-sm md:text-base text-[#bdbdbd]">Detaljan pregled usluge i opcija.</p>
+                <p class="text-sm md:text-base lg:text-xl xl:text-2xl text-[#bdbdbd]">
+                  Detaljan pregled usluge i opcija.
+                </p>
               </div>
-
-              <ShimmerButton ref="closeBtn" @click="close" aria-label="Zatvori detalje usluge"
-                >Zatvori</ShimmerButton
-              >
+              <button @click="close" class="absolute top-0 right-4 text-4xl block md:hidden">
+                X
+              </button>
             </div>
 
             <hr class="text-brand-accent py-3" />
-            <ul class="text-[#cfcfcf] space-y-3 mb-6 overflow-auto">
+            <ul class="text-[#cfcfcf] space-y-3 pb-6 overflow-auto">
               <li
                 v-for="(item, idx) in services[selectedService].description"
                 :key="idx"
