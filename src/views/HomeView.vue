@@ -78,14 +78,14 @@ watch(
   <div class="w-full h-screen">
     <div
       style="
-        background-image: url(&quot;/images/hero.png&quot;);
+        background-image: url(&quot;/images/bg3.png&quot;);
         background-size: cover;
         background-position: center;
       "
       :class="`bg-[${'/src/assets/images/hero.png'}]`"
       class="relative w-full h-screen bg-cover bg-center flex flex-col"
     >
-      <div class="absolute inset-0 bg-bg-opacity"></div>
+      <div class="w-full h-full absolute inset-0 bg-[rgba(0,0,0,0.1)]"></div>
       <motion.div id="scroll-indicator" :style="scrollIndicator"></motion.div>
       <motion.div
         v-if="!mobileView"
@@ -226,7 +226,7 @@ watch(
               <motion.h1
                 :initial="{ opacity: 0 }"
                 :animate="{ opacity: 1, transition: { delay: i * 0.04 } }"
-                class="font-cinzel text-white text-5xl -tracking-widest"
+                class="font-cinzel text-white text-5xl -tracking-widest leading-8"
               >
                 {{ char === " " ? "\u00A0" : char }}
               </motion.h1>
@@ -249,7 +249,7 @@ watch(
         <motion.p
           :initial="{ opacity: 0, y: 20 }"
           :animate="{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.7 } }"
-          class="flex gap-1 text-white items-center font-light text-xl 2xl:text-3xl mt-4"
+          class="flex gap-1 text-white items-center font-light text-xl 2xl:text-3xl md:mt-4"
           ><FontAwesomeIcon :icon="faLocationDot" class="text-[#8D3535] text-3xl" /> Slatina 50,
           44250 Petrinja</motion.p
         >
