@@ -13,6 +13,8 @@ gsap.registerPlugin(SplitText);
 
 const scrollPosition = ref(0);
 const heroText = ref("MS BROWS & LASHES");
+const heroMobileTextTop = ref("MS BROWS");
+const heroMobileTextBottom = ref("& LASHES");
 const mobileView = ref(false);
 const mobileMenuOpened = ref(false);
 
@@ -218,19 +220,29 @@ watch(
               >{{ char === " " ? "\u00A0" : char }}</motion.h1
             >
           </div>
-          <div v-else class="flex flex-wrap justify-center gap-2 pb-2">
-            <template v-for="(char, i) in heroText.split('')" :key="i">
-              <!-- line break before & -->
-              <span v-if="char === '&'" class="basis-full w-full"></span>
-
-              <motion.h1
-                :initial="{ opacity: 0 }"
-                :animate="{ opacity: 1, transition: { delay: i * 0.04 } }"
-                class="font-cinzel text-white text-5xl -tracking-widest leading-8"
-              >
-                {{ char === " " ? "\u00A0" : char }}
-              </motion.h1>
-            </template>
+          <div class="flex flex-col justify-center items-center gap-2 pb-2" v-else>
+            <div class="flex justify-center gap-2 pb-2">
+              <template v-for="(char, i) in heroMobileTextTop.split('')" :key="i">
+                <motion.h1
+                  :initial="{ opacity: 0 }"
+                  :animate="{ opacity: 1, transition: { delay: i * 0.04 } }"
+                  class="font-cinzel text-white text-5xl -tracking-widest leading-8"
+                >
+                  {{ char === " " ? "\u00A0" : char }}
+                </motion.h1>
+              </template>
+            </div>
+            <div class="flex justify-center gap-2 pb-2">
+              <template v-for="(char, i) in heroMobileTextBottom.split('')" :key="i">
+                <motion.h1
+                  :initial="{ opacity: 0 }"
+                  :animate="{ opacity: 1, transition: { delay: i * 0.04 } }"
+                  class="font-cinzel text-white text-5xl -tracking-widest leading-8"
+                >
+                  {{ char === " " ? "\u00A0" : char }}
+                </motion.h1>
+              </template>
+            </div>
           </div>
         </div>
         <motion.p
