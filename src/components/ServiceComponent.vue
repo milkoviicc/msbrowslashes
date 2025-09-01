@@ -244,7 +244,7 @@ onUnmounted(() => {
     <!-- Expanded overlay (shows when a service is selected) -->
     <motion.div
       v-if="selectedService !== null"
-      class="fixed inset-0 z-50 w-full flex items-center"
+      class="fixed inset-0 z-[80] w-full flex items-center"
       :initial="{ opacity: 0, y: 16 }"
       :animate="{ opacity: 1, y: 0, transition: { duration: 0.3, ease: 'easeInOut' } }"
       :exit="{ opacity: 0, y: 8 }"

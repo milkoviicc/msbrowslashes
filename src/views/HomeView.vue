@@ -44,7 +44,7 @@ const scrollIndicator = {
   right: 0,
   height: "1px",
   originX: 0,
-  zIndex: 30,
+  zIndex: 110,
   backgroundColor: "#FFD798",
 };
 
